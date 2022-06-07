@@ -1,4 +1,4 @@
-const { updateUser, deleteUser, getUser } = require('../controller/userController')
+const { updateUser, deleteUser, getUser, FollowUser, UnFollowUser } = require('../controller/userController')
 
 const router = require('express').Router()
 
@@ -11,7 +11,8 @@ router.delete('/delete/:id', deleteUser);
 // GET A USER
 router.get('/:id', getUser)
 // FOLLOW USER
-
+router.put('/:id/follow', FollowUser)
 // UNFOLLOW USER
+router.put('/:id/unfollow', UnFollowUser)
 
 module.exports = router
